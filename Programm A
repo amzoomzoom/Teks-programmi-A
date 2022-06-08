@@ -1,0 +1,437 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tyr
+{
+    class model
+    {
+    }
+
+    class zakaz                  //1 model
+    {
+        int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        int id_men;
+
+        public int Id_men
+        {
+            get { return id_men; }
+            set { id_men = value; }
+        }
+
+
+        int id_klient;
+
+        public int Id_klient
+        {
+            get { return id_klient; }
+            set { id_klient = value; }
+        }
+
+        string data_nac;
+
+        public string Data_nac
+        {
+            get { return data_nac; }
+            set { data_nac = value; }
+        }
+
+        string data_con;
+
+        public string Data_con
+        {
+            get { return data_con; }
+            set { data_con = value; }
+        }
+
+
+        int koll;
+
+        public int Koll
+        {
+            get { return koll; }
+            set { koll = value; }
+        }
+    }
+
+
+    class mesta                    //2 model
+    {
+        int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string strana;
+
+        public string Strana
+        {
+            get { return strana; }
+            set { strana = value; }
+        }
+
+        private string gorad;
+
+        public string Gorad
+        {
+            get { return gorad; }
+            set { gorad = value; }
+        }
+    }
+
+    class men            //2 model
+    {
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string tel;
+
+        public string Tel
+        {
+            get { return tel; }
+            set { tel = value; }
+        }
+
+        string adres;
+
+        public string Adres
+        {
+            get { return adres; }
+            set { adres = value; }
+        }
+    }
+
+    internal class klient //4 model
+    {
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private string tel;
+
+        public string Tel
+        {
+            get { return tel; }
+            set { tel = value; }
+        }
+
+        private string adres;
+
+        public string Adres
+        {
+            get { return adres; }
+            set { adres = value; }
+        }
+
+
+        private string strana;
+
+        public string Strana
+        {
+            get { return strana; }
+            set { strana = value; }
+        }
+
+        private string pasport;
+
+        public string Pasport
+        {
+            get { return pasport; }
+            set { pasport = value; }
+        }
+    }
+
+    class vid
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string zena;
+
+        public string Zena
+        {
+            get { return zena; }
+            set { zena = value; }
+        }
+
+    }
+
+    class transport
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id_mesta;
+
+        public int Id_mesta
+        {
+            get { return id_mesta; }
+            set { id_mesta = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string zena;
+
+        public string Zena
+        {
+            get { return zena; }
+            set { zena = value; }
+        }
+
+    }
+
+    class gost
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id_mesta;
+
+        public int Id_mesta
+        {
+            get { return id_mesta; }
+            set { id_mesta = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private string tel;
+
+        public string Tel
+        {
+            get { return tel; }
+            set { tel = value; }
+        }
+
+        private string adres;
+
+        public string Adres
+        {
+            get { return adres; }
+            set { adres = value; }
+        }
+
+
+        string zena;
+
+        public string Zena
+        {
+            get { return zena; }
+            set { zena = value; }
+        }
+
+    }
+
+    class put
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id_transport;
+
+        public int Id_transport
+        {
+            get { return id_transport; }
+            set { id_transport = value; }
+        }
+
+        private int id_gost;
+
+        public int Id_gost
+        {
+            get { return id_gost; }
+            set { id_gost = value; }
+        }
+
+        private int id_vid;
+
+        public int Id_vid
+        {
+            get { return id_vid; }
+            set { id_vid = value; }
+        }
+
+      
+        string zena;
+
+        public string Zena
+        {
+            get { return zena; }
+            set { zena = value; }
+        }
+
+    }
+
+    class dok
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id_zakaz;
+
+        public int Id_zakaz
+        {
+            get { return id_zakaz; }
+            set { id_zakaz = value; }
+        }
+
+        private int id_put;
+
+        public int Id_put
+        {
+            get { return id_put; }
+            set { id_put = value; }
+        }
+
+        string data;
+
+        public string Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        string summa;
+
+        public string Summa
+        {
+            get { return summa; }
+            set { summa = value; }
+        }
+
+    }
+
+    class inf
+    {
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string zakaz;
+
+        public string Zakaz
+        {
+            get { return zakaz; }
+            set { zakaz = value; }
+        }
+
+        private string put;
+
+        public string Put
+        {
+            get { return put; }
+            set { put = value; }
+        }
+
+        string data;
+
+        public string Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        string summa;
+
+        public string Summa
+        {
+            get { return summa; }
+            set { summa = value; }
+        }
+
+    }
+
+
+}
