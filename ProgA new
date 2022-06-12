@@ -1,0 +1,437 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tyr
+{
+    class model
+    {
+    }
+
+    class zakaz                  //1 model
+    {
+        int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        int manager_id;
+
+        public int manager_id
+        {
+            get { return manager_id; }
+            set { manager_id = value; }
+        }
+
+
+        int nomer_clienta;
+
+        public int nomer_clienta
+        {
+            get { return nomer_clienta; }
+            set { nomer_clienta = value; }
+        }
+
+        string nachalo_date;
+
+        public string nachalo_date
+        {
+            get { return nachalo_date; }
+            set { nachalo_date = value; }
+        }
+
+        string okonchanie_date;
+
+        public string Okonchanie_date
+        {
+            get { return okonchanie_date; }
+            set { okonchanie_date = value; }
+        }
+
+
+        int skolko_ludey;
+
+        public int skolko_ludey
+        {
+            get { return skolko_ludey; }
+            set { skolko_ludey = value; }
+        }
+    }
+
+
+    class mesta                    //2 model
+    {
+        int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string stran_nazovi;
+
+        public string stran_nazovi
+        {
+            get { return stran_nazovi; }
+            set { stran_nazovi = value; }
+        }
+
+        private string gorod_nazovi;
+
+        public string Gorod_nazovi
+        {
+            get { return gorod_nazovi; }
+            set { gorod_nazovi = value; }
+        }
+    }
+
+    class manager            //2 model
+    {
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string tel_vvedi;
+
+        public string Tel_vvedi
+        {
+            get { return tel_vvedi; }
+            set { tel_vvedi = value; }
+        }
+
+        string manager_adress;
+
+        public string Manager_adress
+        {
+            get { return manager_adress; }
+            set { manager_adress = value; }
+        }
+    }
+
+    internal class client //4 model
+    {
+        private int id;
+
+        public nomer_clienta
+        {
+            get { return nomer_clineta; }
+            set {nomer_clienta = value; }
+        }
+
+        private string famimya;
+
+        public string famimya
+        {
+            get { return famimya; }
+            set { famimya = value; }
+        }
+
+        private string tel_vvedi;
+
+        public string Tel_vvedi
+        {
+            get { return tel_vvedi; }
+            set { tel_vvedi = value; }
+        }
+
+        private string manager_adress;
+
+        public string Manager_adress
+        {
+            get { return manager_adress; }
+            set { manager_adress = value; }
+        }
+
+
+        private string stran_nazovi;
+
+        public string Stran_nazovi
+        {
+            get { return stran_nazovi; }
+            set { stran_nazovi = value; }
+        }
+
+        private string dannye_documenta;
+
+        public string Dannye_documenta
+        {
+            get { return dannye_documenta; }
+            set { dannye_documenta = value; }
+        }
+    }
+
+    class turvid_kat
+    {
+
+        private int turvid_kat;
+
+        public turvid_kat
+        {
+            get { return turvid_kat; }
+            set { turvid_kat = value; }
+        }
+
+        string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        string skolko_eto_stoit;
+
+        public string skolko_eto_stoit
+        {
+            get { return skolko_eto_stoit; }
+            set { skolko_eto_stoit = value; }
+        }
+
+    }
+
+    class Transport
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int nom_kuda;
+
+        public int nom_kuda
+        {
+            get { return nom_kuda; }
+            set { nom_kuda = value; }
+        }
+
+        string povozka_nazovi;
+
+        public string povozka_nazovi
+        {
+            get { return povozka_nazovi; }
+            set { povozka_nazovi = value; }
+        }
+
+        string povozka_skolko_stoit;
+
+        public string povozka_skolko_stoit
+        {
+            get { return povozka_skolko_stoit; }
+            set { povozka_skolko_stoit = value; }
+        }
+
+    }
+
+    class gostinitsa
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int nom_kuda;
+
+        public int nom_kuda
+        {
+            get { return nom_kuda; }
+            set { nom_kuda = value; }
+        }
+
+        string gostin_nazovi;
+
+        public string gostin_nazovi
+        {
+            get { return gostin_nazovi; }
+            set { gostin_nazovi = value; }
+        }
+
+        private string gostin_pozvoni;
+
+        public string gostin_pozvoni
+        {
+            get { return gostin_pozvoni; }
+            set { gostin_pozvoni = value; }
+        }
+
+        private string gostin_kuda;
+
+        public string gostin_kuda
+        {
+            get { return gostin_kuda; }
+            set { gostin_kuda = value; }
+        }
+
+
+        string gostin_howmuch;
+
+        public string gostin_howmuch
+        {
+            get { return gostin_howmuch; }
+            set { gostin_howmuch = value; }
+        }
+
+    }
+
+    class putevka
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id_transport;
+
+        public int Id_transport
+        {
+            get { return id_transport; }
+            set { id_transport = value; }
+        }
+
+        private int id_gostinitsa;
+
+        public int Id_gostinitsa
+        {
+            get { return Id_gostinitsa; }
+            set { Id_gostinitsa = value; }
+        }
+
+        private int id_turvid_kat;
+
+        public int id_turvid_kat
+        {
+            get { return id_turvid_kat; }
+            set { id_turvid_kat = value; }
+        }
+
+      
+        string marshrut_itog_stoimost;
+
+        public string marshrut_itog_stoimost
+        {
+            get { return marshrut_itog_stoimost; }
+            set { marshrut_itog_stoimost = value; }
+        }
+
+    }
+
+    class document
+    {
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int tut_nomer;
+
+        public int tut_nomer
+        {
+            get { return tut_nomer; }
+            set { tut_nomer = value; }
+        }
+
+        private int id_putevka;
+
+        public int Id_putevka
+        {
+            get { return id_putevka; }
+            set { id_putevka = value; }
+        }
+
+        string kogda_oform;
+
+        public string kogda_oform
+        {
+            get { return kogda_oform; }
+            set { kogda_oform = value; }
+        }
+
+        string skolko_eto_stoit;
+
+        public string skolko_eto_stoit
+        {
+            get { return skolko_eto_stoit; }
+            set { skolko_eto_stoit = value; }
+        }
+
+    }
+
+    class inf
+    {
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string zakaz;
+
+        public string Zakaz
+        {
+            get { return zakaz; }
+            set { zakaz = value; }
+        }
+
+        private string put;
+
+        public string Put
+        {
+            get { return put; }
+            set { put = value; }
+        }
+
+        string data;
+
+        public string Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        string skolko_eto_stoit;
+
+        public string skolko_eto_stoit
+        {
+            get { return skolko_eto_stoit; }
+            set { skolko_eto_stoit = value; }
+        }
+
+    }
+
+
+}
