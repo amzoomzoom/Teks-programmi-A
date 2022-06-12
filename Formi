@@ -12,16 +12,16 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Nag
 {
-    public partial class Form_education : Form
+    public partial class Form_obrzovanie : Form
     {
         private int id = 0;
       
-        public Form_education(int Id)
+        public Form_obrazovanie(int Id)
         {
             id = Id;
             InitializeComponent();
         }
-        private void Form_education_Load(object sender, EventArgs e)
+        private void Form_obrazovanie_Load(object sender, EventArgs e)
         {
             GraphicsPath gPath = new GraphicsPath();
             Rectangle rect = new Rectangle(0, 0, 787, 682);
@@ -33,19 +33,19 @@ namespace Nag
         private void next()
         {
             BD bd = new BD();
-            List<edukation> spisok = new List<edukation>();
-            List<edukations> spisok1 = new List<edukations>();
-            spisok = bd.Fill_edukation_Id_sotrydnik(id.ToString());
-            foreach (edukation p in spisok)
+            List<obrazovanie> spisok = new List<obrazovanie>();
+            List<obrazovanie> spisok1 = new List<obrazovanie>();
+            spisok = bd.Fill_obrazovanie_Id_sotrydnik(id.ToString());
+            foreach (obrazovanie p in spisok)
             {
-                edukations s = new edukations();
+                obrazovanie s = new obrazovanie();
                 s.Id = p.Id;
-                s.Sotrydnik = bd.Get_sotrydnik_id(p.Id_sotrydnik.ToString()).Name;
+                s.Sotrudnik = bd.Get_sotrudnik_id(p.Id_sotrudnik.ToString()).Name;
                 s.Tip = bd.Get_tip_Id(p.Id_tip.ToString()).Name;
-                s.Name = p.Name;
-                s.God = p.God;
-                s.Spec = p.Spec;
-                s.Kvalifik = p.Kvalifik;
+                s.Nazvanie = p.nazvanie;
+                s.data_okoncaniya = p.data_okoncaniya;
+                s.pecialnost = p.Specialnost;
+                s.Kvalificaciya = p.Kvalificaciya;
                 spisok1.Add(s);
             }
             
@@ -54,7 +54,7 @@ namespace Nag
             dataGridView1.Columns[1].HeaderText = "Сотрудник";
             dataGridView1.Columns[2].HeaderText = "Тип образования";
             dataGridView1.Columns[3].HeaderText = "Место образования";
-            dataGridView1.Columns[4].HeaderText = "Год окончания";
+            dataGridView1.Columns[4].HeaderText = "Дата окончания";
             dataGridView1.Columns[5].HeaderText = "Специальность";
             dataGridView1.Columns[6].HeaderText = "Квалификация";
 
@@ -78,28 +78,28 @@ namespace Nag
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (comboBox_tip.Text == "" || textBox_god.Text == "" || textBox_name.Text == "" || textBox_spec.Text == "" || textBox_kv.Text == "")
+            if (comboBox_tip.Text == "" || textBox_data_okoncaniya.Text == "" || textBox_nazvanie.Text == "" || textBox_specialnost.Text == "" || textBox_kvalificaciya.Text == "")
             {
                 MessageBox.Show("Заполните поля данных!!!");
             }
             else
             {
                 BD bd = new BD();
-                edukation z = new edukation();
+                obrazovanie z = new obrazovanie();
 
-                z.Id_sotrydnik = id;
-                z.Id_tip = bd.Get_tip_name(comboBox_tip.Text).Id;
+                z.Id_sotrudnik = id;
+                z.Id_tip = bd.Get_tip_nazvanie(comboBox_tip.Text).Id;
                
-                z.Name =textBox_name.Text;
-                z.God = Convert.ToInt32(textBox_god.Text);
-                z.Spec = textBox_spec.Text;
-                z.Kvalifik = textBox_kv.Text;
+                z.nazvanie =textBox_nazvanie.Text;
+                z.data_okonchaniya = Convert.ToInt32(textBox_data_okonchaniya)
+                z.specialnost = textBox_specialnost.Text;
+                z.kvalificaciya = textBox_kvalificaciya.Text;
 
                 try
                 {
-                    bd.Inser_edukation(z);
+                    bd.Inser_obrazovanie(z);
                     next();
-                    MessageBox.Show("Успешно!!!");
+                    MessageBox.Show("Успешно!");
                 }
                 catch (FormatException)
                 { MessageBox.Show("Ошибка!"); }
@@ -109,41 +109,41 @@ namespace Nag
         {
             if (textBox_id.Text == "")
             {
-                MessageBox.Show("Заполните поля!!!");
+                MessageBox.Show("Заполните поля!");
             }
             else
             {
                 BD bd = new BD();
-                bd.Delete(textBox_id.Text, "edukation");
+                bd.Delete(textBox_id.Text, "obrazovanie");
                 next();
             } }
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            if (comboBox_tipp.Text == "" || textBox_idd.Text == "" || textBox_godd.Text == "" || textBox_namee.Text == "" || textBox_specc.Text == "" || textBox_kvv.Text == "")
+            if (comboBox_tip.Text == "" || textBox_id.Text == "" || textBox_data_oconcaniya.Text == "" || textBox_nazvanie.Text == "" || textBox_specialnost.Text == "" || textBox_kvalificaciya.Text == "")
             {
-                MessageBox.Show("Заполните поля данных!!!");
+                MessageBox.Show("Заполните поля данных!");
             }
             else
             {
                 BD bd = new BD();
 
-                edukation z = new edukation();
-                edukation tek = new edukation();
+                obrazovanie z = new obrazovanie();
+                obrazovanie tek = new obrazovanie();
 
-                z.Id_sotrydnik = id;
-                z.Id_tip = bd.Get_tip_name(comboBox_tipp.Text).Id;
+                z.Id_sotrudnik = id;
+                z.Id_tip = bd.Get_tip_nazvanie(comboBox_tip.Text).Id;
 
-                z.Name = textBox_namee.Text;
-                z.God = Convert.ToInt32(textBox_godd.Text);
-                z.Spec = textBox_specc.Text;
-                z.Kvalifik = textBox_kvv.Text;
+                z.Nazvanie = textBox_nazvanie.Text;
+                z.data_okonchaniya = Convert.ToInt32(textBox_data_okonchaniya.Text);
+                z.Specialnost = textBox_specialnost.Text;
+                z.Kvalificaciya = textBox_kalificaciya.Text;
 
-                tek.Id = Convert.ToInt32(textBox_idd.Text);
+                tek.Id = Convert.ToInt32(textBox_id.Text);
 
                 try
                 {
-                    bd.Update_edukation(tek, z);
+                    bd.Update_obrazovanie(tek, z);
                     next();
                     MessageBox.Show("Успешно!");
                 }
@@ -153,10 +153,10 @@ namespace Nag
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             textBox_id.Text = dataGridView1[0, data-GridView1.CurrentRow.Index].Value.ToString();
-            textBox_idd.Text = dataGridView1[0, data-GridView1.CurrentRow.Index].Value.ToString();            
-            comboBox_tipp.Text = dataGridView1[2, data-GridView1.CurrentRow.Index].Value.ToString();
-            textBox_namee.Text = dataGridView1[3, data-GridView1.CurrentRow.Index].Value.ToString();
-            textBox_godd.Text = dataGridView1[4, data-GridView1.CurrentRow.Index].Value.ToString();
-            textBox_specc.Text = dataGridView1[5, data-GridView1.CurrentRow.Index].Value.ToString();
-            textBox_kvv.Text = dataGridView1[6, data-GridView1.CurrentRow.Index].Value.ToString();
+            textBox_id.Text = dataGridView1[0, data-GridView1.CurrentRow.Index].Value.ToString();            
+            comboBox_tip.Text = dataGridView1[2, data-GridView1.CurrentRow.Index].Value.ToString();
+            textBox_nazvanie.Text = dataGridView1[3, data-GridView1.CurrentRow.Index].Value.ToString();
+            textBox_data_okoncaniya.Text = dataGridView1[4, data-GridView1.CurrentRow.Index].Value.ToString();
+            textBox_specialnost.Text = dataGridView1[5, data-GridView1.CurrentRow.Index].Value.ToString();
+            textBox_kvalificaciya.Text = dataGridView1[6, data-GridView1.CurrentRow.Index].Value.ToString();
         }      
